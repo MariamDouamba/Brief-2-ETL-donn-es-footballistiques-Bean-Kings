@@ -1,5 +1,6 @@
 import etl_clean_1930_2010 as etl_base
 import etl_inserter_2014 as inserter
+import etl_create_view as etl_view
 import etl_2014 as etl_2014
 import etl_2018 as etl_2018
 import etl_2022 as etl_2022
@@ -17,3 +18,4 @@ def merge_data():
     return big_df
 
 inserter.load_matches(merge_data())
+etl_view.create_view()
